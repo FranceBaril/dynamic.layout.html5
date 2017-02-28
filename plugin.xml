@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="dlhtml5">
+   <require plugin="org.dita.html5"/>
+   <!-- extension points -->
+   <feature extension="dita.xsl.xhtml" file="xsl/dita2dlhtml5.xsl"/>
+   <!-- Defining this transtype as bootstrap means ANT is looking to start with <project name="dita2bootstrap"/> -->
+   <transtype name="dlhtml5" extends="common-html" desc="DynamicLayout"/>
+   <!-- Extends build.xml -->
+   <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
+</plugin>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dita2dlhtml5" xmlns:dita="http://dita-ot.sourceforge.net">
+
+  <target name="dita2dlhtml5" depends="dlhtml5.init, html5.init, build-init, preprocess, html5.topic, html5.map, html5.css"/>
+   
+   
+   <target name="dlhtml5.init">
+     <!-- Need to set base directory in Oxygen to dita-ot-x.x.x folder -->
+     <condition property="args.xsl" value="${plugin.dlhtml5.dir}/xsl/dita2dlhtml5.xsl">
+      <not>
+        <isset property="args.xsl"/>
+      </not>
+    </condition>
+      <!-- Copy .js -->
+      <!-- Process .scss -->
+   </target>
+   
+</project>
