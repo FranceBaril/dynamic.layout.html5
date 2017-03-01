@@ -578,38 +578,50 @@ body {
 }
 
 header {
-   background: black;
+   background: #00b2dd;
    color: white;
-   padding: 16px;
+   padding: 0 0 0 16px;
+   min-height: 42px;
 }
 
-nav {
+nav[role='toc'] {
+    color: #dddddd;
     height: 100%;
-    width: 0;
+    width: 0px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #00b2dd;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 32px;
 }
 
-nav a {
-    padding: 8px 8px 8px 32px;
+nav[role='toc'] ul {
+   list-style-type: none;
+   list-style-position:inside;
+   padding-left: 0px;
+}
+
+nav[role='toc'] li {
+
+}
+
+nav[role='toc'] a {
+    padding: 8px 8px 8px 8px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 16px;
+    color: #dddddd;
     display: block;
     transition: 0.3s
 }
 
-nav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+nav[role='toc'] a:hover, .offcanvas a:focus{
+    color: white;
 }
 
-nav .closebtn {
+nav[role='toc'] .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -617,15 +629,34 @@ nav .closebtn {
     margin-left: 50px;
 }
 
-main {
+#main {
     transition: margin-left .5s;
-    padding: 16px;
-    border: 1px solid red;
+}
+
+article {
+   padding: 16px;
+}
+
+#closenav {
+   color: #dddddd;
+   float: right;
+   clear: left;
+   padding-right: 16px;
+   padding-top: 16px;
+}
+
+#opennav {
+  color: #dddddd;
+}
+
+#closenav:hover, #opennav:hover {
+   color: white;
+   cursor: pointer
 }
 
 @media screen and (max-height: 450px) {
-  nav {padding-top: 15px;}
-  nav a {font-size: 18px;}
+  nav[role='toc'] {padding-top: 15px;}
+  nav[role='toc'] a {font-size: 18px;}
 }
 
 

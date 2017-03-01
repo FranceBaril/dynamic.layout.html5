@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="dita2dlhtml5" xmlns:dita="http://dita-ot.sourceforge.net">
 
-  <target name="dita2dlhtml5" depends="dlhtml5.init, html5.init, build-init, preprocess, html5.topic, html5.map, dlhtml5.css"/>
+  <target name="dita2dlhtml5" depends="dlhtml5.init, html5.init, build-init, preprocess, html5.topic, html5.map, dlhtml5.css, dlhtml5.js"/>
    
    
    <target name="dlhtml5.init">
@@ -34,6 +34,15 @@
     </copy>
     <!-- Copy user specify css file when required -->
     <antcall target="html5.copy-css-user"/>
+  </target>
+  
+  <target name="dlhtml5.js" description="Copy Js files">
+    <property name="js.path" location="${output.dir}/js"/>
+    <mkdir dir="${js.path}"/>
+    <!-- Always copy system default css files -->
+    <copy todir="${js.path}">
+      <fileset dir="${plugin.dlhtml5.dir}/js" includes="*.js"/>
+    </copy>
   </target>
 
   <target name="html5.copy-css-user" if="user.copycss.yes">

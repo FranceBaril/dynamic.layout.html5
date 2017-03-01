@@ -6,6 +6,7 @@
    
    <xsl:import href="dita2dlhtml5Impl.xsl"/>
   <xsl:import href="topic.xsl"/>
+  <xsl:import href="nav.xsl"/>
   
   <xsl:output method="html"
               encoding="UTF-8"
