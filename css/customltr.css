@@ -558,7 +558,6 @@ table .desc {
 /* div with class=p is used for paragraphs that contain blocks, to keep the XHTML valid */
 .p {
   margin-top: 1em;
-  background: yellow;
 }
 
 
@@ -584,10 +583,9 @@ header {
    min-height: 42px;
 }
 
-nav[role='toc'] {
+#navtoc {
     color: #dddddd;
     height: 100%;
-    width: 0px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -598,17 +596,21 @@ nav[role='toc'] {
     padding-top: 32px;
 }
 
-nav[role='toc'] ul {
+#navtoc ul {
    list-style-type: none;
    list-style-position:inside;
    padding-left: 0px;
 }
 
-nav[role='toc'] li {
+#navtoc li ul {
+   margin-left: 16px;
+}
+
+#navtoc li {
 
 }
 
-nav[role='toc'] a {
+#navtoc a {
     padding: 8px 8px 8px 8px;
     text-decoration: none;
     font-size: 16px;
@@ -617,24 +619,22 @@ nav[role='toc'] a {
     transition: 0.3s
 }
 
-nav[role='toc'] a:hover, .offcanvas a:focus{
+#navtoc a:hover, .offcanvas a:focus{
     color: white;
 }
 
-nav[role='toc'] .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
 #main {
+    color: #404040;
     transition: margin-left .5s;
 }
 
 article {
    padding: 16px;
+}
+
+article a {
+   color: #00b2dd;
+   text-decoration: none;
 }
 
 #closenav {
@@ -653,11 +653,35 @@ article {
    color: white;
    cursor: pointer
 }
+/*
 
 @media screen and (max-height: 450px) {
-  nav[role='toc'] {padding-top: 15px;}
-  nav[role='toc'] a {font-size: 18px;}
+  #navtoc {padding-top: 15px;}
+  #navtoc a {font-size: 18px;}
 }
 
+*/
 
+@media screen and (min-width: 768px) {
+   #main { 
+      background-color: white;
+      margin-left: 250px;
+   }
+   #navtoc {
+      display:block;
+      width: 250px;
+   }
+   
+   #closenav {
+      display:none;
+   }
+   
+   #opennav {
+      display:none;
+   }
+}
+
+@media screen and (max-width: 767px) {
+   width: 0px;
+}
 
